@@ -198,6 +198,22 @@ yarp::math::Vec2D<T>& yarp::math::Vec2D<T>::operator =(const yarp::math::Vec2D<T
     return *this;
 }
 
+template <typename T>
+bool yarp::math::Vec2D<T>::operator ==(const yarp::math::Vec2D<T>& rhs)
+{
+    if (this->x == rhs.x &&
+        this->y == rhs.y) return true;
+    return false;
+}
+
+template <typename T>
+bool yarp::math::Vec2D<T>::operator !=(const yarp::math::Vec2D<T>& rhs)
+{
+    if (this->x == rhs.x &&
+        this->y == rhs.y) return false;
+    return true;
+}
+
 template  yarp::math::Vec2D<double> YARP_math_API operator + (yarp::math::Vec2D<double> lhs, const yarp::math::Vec2D<double>& rhs);
 template  yarp::math::Vec2D<int>    YARP_math_API operator + (yarp::math::Vec2D<int> lhs, const yarp::math::Vec2D<int>& rhs);
 template  yarp::math::Vec2D<double> YARP_math_API operator - (yarp::math::Vec2D<double> lhs, const yarp::math::Vec2D<double>& rhs);
